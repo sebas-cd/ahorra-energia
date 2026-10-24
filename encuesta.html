@@ -44,26 +44,26 @@
 
                 <!-- Campo 1: text -->
                 <div class="mb-3">
-                    <label class="form-label" for="familia">Nombre del representante o apellido de la familia: *</label>
-                    <input class="form-control" type="text" id="familia" name="familia" required placeholder="Ej.: Familia Castaño Duque">
+                    <label class="form-label" for="familia">Nombre del representante: *</label>
+                    <input class="form-control" type="text" id="familia" name="familia" required placeholder="Cosme Fulanito">
                 </div>
 
                 <!-- Campo 2: email -->
                 <div class="mb-3">
                     <label class="form-label" for="correo">Correo electrónico de contacto: *</label>
-                    <input class="form-control" type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+                    <input class="form-control" type="email" id="correo" name="correo" required placeholder="cosme@fulanito.com">
                 </div>
 
                 <!-- Campo 3: number con min y max -->
                 <div class="mb-3">
-                    <label class="form-label" for="integrantes">Número de personas que viven en la casa (entre 1 y 15): *</label>
-                    <input class="form-control" type="number" id="integrantes" name="integrantes" min="1" max="15" required placeholder="Ej.: 4">
+                    <label class="form-label" for="integrantes">Número de personas que viven en la casa: *</label>
+                    <input class="form-control" type="number" id="integrantes" name="integrantes" min="1" max="15" required placeholder="1 - 15">
                 </div>
 
                 <!-- Campo 4: number con min y max -->
                 <div class="mb-3">
-                    <label class="form-label" for="consumo_mes">Consumo del último mes en la factura (kWh, entre 1 y 2000): *</label>
-                    <input class="form-control" type="number" id="consumo_mes" name="consumo_mes" min="1" max="2000" required placeholder="Ej.: 143">
+                    <label class="form-label" for="consumo_mes">Consumo del último mes en la factura (kWh): *</label>
+                    <input class="form-control" type="number" id="consumo_mes" name="consumo_mes" min="1" max="2000" required placeholder="1 - 2000">
                 </div>
             </fieldset>
 
@@ -84,9 +84,15 @@
                 </div>
 
                 <!-- Campo 6: range -->
-                <div class="mb-3">
-                    <label class="form-label" for="compromiso">Nivel de compromiso familiar con el ahorro de energía (1 = bajo, 10 = muy alto):</label>
-                    <input class="form-range" type="range" id="compromiso" name="compromiso" min="1" max="10" value="8">
+                <div class="mb-3 p-3 bg-light border rounded">
+                    <label class="form-label fw-bold d-flex justify-content-between align-items-center" for="compromiso">
+                        <span>Nivel de compromiso familiar con el ahorro de energía (1 = muy bajo, 10 = muy alto):</span>
+                        <span class="badge bg-primary fs-6"><output id="valor_compromiso" for="compromiso">8</output> / 10</span>
+                    </label>
+                    <input class="form-range" type="range" id="compromiso" name="compromiso" min="1" max="10" step="1" value="8" oninput="document.getElementById('valor_compromiso').value = this.value">
+                    <div class="d-flex justify-content-between text-secondary fw-semibold small px-1">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                    </div>
                 </div>
 
                 <!-- Campo 7: radio -->
