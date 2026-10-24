@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<!-- html: la etiqueta raiz; lang="es" indica que el contenido esta en espanol -->
+<head>
+    <!-- head: informacion SOBRE la pagina (no se ve en la ventana) -->
+    <meta charset="UTF-8">
+    <!-- charset UTF-8: permite tildes, enie y simbolos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport: la pagina se adapta al ancho del celular -->
+    <title>Mi factura de energía</title>
+    <!-- title: el texto que aparece en la pestana del navegador -->
+    <!-- Bootstrap: una hoja de estilos YA HECHA que se carga desde internet (CDN). -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="container py-3">
+    <!-- header: el ENCABEZADO de la pagina -->
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Mi factura de energía <span class="badge bg-warning text-dark">Septiembre 2026</span></h1>
+        <p>Análisis del historial de consumo real de nuestra casa y comparación con los equipos medidos.</p>
+        <!-- nav: el MENU de navegacion entre las 5 paginas del sitio -->
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link active bg-light text-primary fw-bold" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta de hábitos</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mb-4">
+            <h2>Soporte de mi factura de energía</h2>
+            <p>En el periodo facturado del <strong>11 de agosto al 09 de septiembre de 2026 (30 días)</strong>, la lectura pasó de 7.470 a 7.613, registrando un consumo de <strong>143 kWh</strong> a un costo unitario de <strong>$960,34 COP/kWh</strong>.</p>
+            <figure class="card p-3 bg-light">
+                <img class="img-fluid rounded" src="img/Factura.jpg" alt="Factura de energía del periodo del 11 de agosto al 9 de septiembre de 2026 con consumo de 143 kWh, tarifa de 960,34 COP y gráfico del histórico de consumos" width="750">
+                <figcaption class="mt-2 text-muted">Detalle del periodo facturado (sep-26) y gráfico de histórico de consumos (kWh) y promedio de los últimos 6 meses (90 kWh).</figcaption>
+            </figure>
+        </section>
+
+        <section class="mb-4">
+            <h2>Historial de consumo de la factura</h2>
+            <p>La siguiente tabla muestra los meses reportados en el histórico de la factura, los días facturados, los kWh consumidos y el valor pagado (aplicando el costo unitario de referencia de la factura de <strong>$960,34 COP/kWh</strong> y mostrando el total con subsidio en el mes actual):</p>
+            <table class="table table-striped table-bordered">
+                <caption>Historial de consumo mensual según la factura de energía</caption>
+                <thead>
+                    <tr>
+                        <th>Mes / Periodo</th>
+                        <th>Días facturados</th>
+                        <th>Consumo (kWh)</th>
+                        <th>Valor pagado / facturado (COP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Septiembre 2025 (SEP/25)</td><td>31</td><td>172</td><td>$165.178</td></tr>
+                    <tr><td>Marzo 2026 (MAR/26)</td><td>29</td><td>47</td><td>$45.136</td></tr>
+                    <tr><td>Abril 2026 (ABR/26)</td><td>30</td><td>4</td><td>$3.841</td></tr>
+                    <tr><td>Mayo 2026 (MAY/26)</td><td>31</td><td>23</td><td>$22.088</td></tr>
+                    <tr><td>Junio 2026 (JUN/26)</td><td>30</td><td>167</td><td>$160.377</td></tr>
+                    <tr><td>Julio 2026 (JUL/26)</td><td>29</td><td>155</td><td>$148.853</td></tr>
+                    <tr><td>Agosto 2026 (AGO/26)</td><td>32</td><td>145</td><td>$139.249</td></tr>
+                    <tr>
+                        <td><strong>Septiembre 2026 (Actual)</strong> <span class="badge bg-primary">Factura actual</span></td>
+                        <td>30</td>
+                        <td><strong>143</strong></td>
+                        <td><strong>$137.328,62</strong> (Con subsidio de -$18.726,63: <strong>$118.601,99</strong>)</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="2">Promedio últimos 6 meses (PROM en factura)</th>
+                        <td>90</td>
+                        <td>$86.431</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section class="mb-4">
+            <h2>Comparación: proyección mensual de equipos.html vs. factura real</h2>
+            <!-- Componentes Bootstrap: cards + alert -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <div class="card border-info h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Proyección mensual de los 4 equipos <span class="badge bg-info text-dark">equipos.html</span></h3>
+                            <p class="card-text mb-1">Consumo semanal medido: <strong>12,58 kWh</strong> ($12.076 COP).</p>
+                            <p class="card-text mb-1">En 4 semanas (28 días): <strong>50,32 kWh</strong> ($48.304 COP).</p>
+                            <p class="card-text mb-0">En 30 días (× 4,2857 semanas): <strong>53,91 kWh</strong> ($51.754 COP).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-primary h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Consumo real en el medidor <span class="badge bg-primary">Factura sep-26</span></h3>
+                            <p class="card-text mb-1">Consumo facturado en 30 días: <strong>143 kWh</strong>.</p>
+                            <p class="card-text mb-1">Valor energía sin subsidio: <strong>$137.328,62 COP</strong>.</p>
+                            <p class="card-text mb-0">Diferencia frente a la proyección: faltan <strong>89,09 kWh</strong> (el <strong>62,3 %</strong> del recibo).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-secondary" role="alert">
+                <h3 class="h5">¿Por qué hay una diferencia de casi 89 kWh al mes?</h3>
+                <p class="mb-0">
+                    Los cuatro equipos registrados en <code>equipos.html</code> (aspiradora, freidora de aire, amplificador y televisor) proyectan entre <strong>50,32 kWh</strong> y <strong>53,91 kWh al mes</strong>, es decir, apenas el <strong>37,7 %</strong> de los <strong>143 kWh</strong> que cobró la factura de septiembre. Los otros <strong>89 a 92 kWh mensuales</strong> corresponden a los electrodomésticos de uso permanente o diario que no están en esa tabla inicial: principalmente la <strong>nevera</strong> (que permanece conectada las 24 horas del día y consume entre 35 y 45 kWh al mes), el <strong>computador de escritorio</strong>, la <strong>lavadora</strong>, la <strong>iluminación LED</strong> de las habitaciones, los <strong>routers de internet</strong> (encendido 24/7) y la carga diaria de <strong>computadores portátiles y celulares</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Recomendaciones de ahorro para nuestra familia</h2>
+            <p>Basándonos en los datos reales de nuestros equipos y en la evolución de la factura (que bajó de 167 kWh en junio a 143 kWh en septiembre, pero sigue por encima del promedio de 90 kWh), acordamos estas acciones en casa:</p>
+            <ul>
+                <li><strong>Reducir el uso de la freidora de aire (1100 W) de 7 a 4 horas por semana:</strong> cocinar varios alimentos en una misma tanda nos ahorrará <strong>3,3 kWh semanales</strong> (unos <strong>14,1 kWh al mes</strong>, equivalentes a <strong>$13.540 COP mensuales</strong>).</li>
+                <li><strong>Mantener la tendencia de descenso hacia la meta de 90 kWh:</strong> desde junio (167 kWh) hemos logrado bajar a julio (155 kWh), agosto (145 kWh) y septiembre (143 kWh). Si recortamos otros 15 a 20 kWh mensuales cuidando la apertura de la nevera y el tiempo de ducha, evitaremos cualquier recargo por superar el tope del 110 % de la Resolución CREG 101 120 de 2026.</li>
+                <li><strong>Usar regleta con interruptor para el televisor (115 W) y el amplificador (19 W):</strong> apagar la regleta por completo al dormir y reducir 1 hora diaria de televisor los fines de semana nos permitirá ahorrar cerca de <strong>1,5 kWh adicionales al mes</strong> y eliminar el consumo en espera (<em>standby</em>).</li>
+                <li><strong>Concentrar el uso de la aspiradora (1300 W) con filtro limpio:</strong> mantener el depósito de polvo despejado hace que el motor trabaje con mayor eficiencia y complete el aseo del fin de semana en menos de 45 minutos.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>
