@@ -16,7 +16,7 @@
 <body class="container py-3">
     <!-- header: el ENCABEZADO de la pagina -->
     <header class="p-4 mb-4 bg-primary text-white rounded">
-        <h1>Hábitos de consumo de energía en el hogar</span></h1>
+        <h1>Hábitos de consumo de energía en el hogar</h1>
         <p>Conozca cómo usa la energía su familia y descubra oportunidades para ahorrar durante El Niño 2026.</p>
         <!-- nav: el MENU de navegacion entre las 5 paginas del sitio -->
         <nav class="nav nav-pills">
@@ -83,10 +83,10 @@
 
                 <!-- Campo 6: range -->
                 <div class="mb-3 p-3 bg-light border rounded">
-                    <label class="form-label fw-bold d-flex justify-content-between align-items-center" for="compromiso">
-                        <span>Nivel de compromiso familiar con el ahorro de energía (1 = muy bajo, 10 = muy alto):</span>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="form-label fw-bold mb-0" for="compromiso">Nivel de compromiso familiar con el ahorro de energía (1 = muy bajo, 10 = muy alto):</label>
                         <span class="badge bg-primary fs-6"><output id="valor_compromiso" for="compromiso">8</output> / 10</span>
-                    </label>
+                    </div>
                     <input class="form-range" type="range" id="compromiso" name="compromiso" min="1" max="10" step="1" value="8" oninput="document.getElementById('valor_compromiso').value = this.value">
                     <div class="d-flex justify-content-between text-secondary fw-semibold small px-1">
                         <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
